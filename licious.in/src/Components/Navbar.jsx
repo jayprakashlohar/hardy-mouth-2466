@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, HStack, Text, Box, Image, Input, Stack, Button, InputRightElement, Icon, InputGroup } from "@chakra-ui/react";
+import { Flex, HStack, Text, Box, Image, Input, Stack, Button, InputRightElement, Icon, InputGroup, color } from "@chakra-ui/react";
 import { SearchIcon } from '@chakra-ui/icons'
 
 
@@ -42,17 +42,21 @@ const Navbar = () => {
 
         </Flex>
 
-        <Flex border="1px solid teal" p='20px'>
-            <Box sx={{ marginLeft: "100px",  }}>
+        <Flex p='20px' bg="#FFFFFF" >
+            <Box sx={{ marginLeft: "100px", cursor: "pointer" }}>
                 <Image src='https://www.licious.in/img/rebranding/licious-logo.svg' alt='logo' />
             </Box>
-            <Box sx={{ marginLeft: "80px", border: '1px solid teal', }}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
-                </svg>
-                <span className="span">BENGALUIRU </span>
+
+            <Box sx={{ ml: "60px", mt: "4px", cursor: "pointer", }}>
+                <Image src="https://www.licious.in/img/rebranding/location_icon.svg" />
 
             </Box>
+            <Box sx={{ ml: "5px", mt: "4px", fontSize: "11px" }}>
+                <p>BENGALUIRU <br />42312 </p>
+
+            </Box>
+
+
             <Stack>
                 <InputGroup>
                     <Input
@@ -63,8 +67,8 @@ const Navbar = () => {
                         bg="#f8f8f8"
                         type="text"
                         placeholder="Search for any delicious product"
-
                     />
+
                     <InputRightElement width='4.5rem'>
                         <Icon as={SearchIcon} />
                     </InputRightElement>
@@ -75,7 +79,7 @@ const Navbar = () => {
                 <Image src="https://www.licious.in/img/rebranding/category-dropdown-icon.svg" />
 
             </Box>
-            <Box sx={{ ml: "15px", mt: "10px", fontSize: "13px" }}>
+            <Box sx={{ ml: "15px", mt: "10px", fontSize: "13px", cursor: "pointer" }}>
                 <p>Categories</p>
             </Box>
 
@@ -85,16 +89,16 @@ const Navbar = () => {
                 <Image src="https://www.licious.in/img/rebranding/profile_icon.svg" />
 
             </Box>
-            <Box sx={{ ml: "15px", mt: "10px", fontSize: "13px" }}>
+            <Box sx={{ ml: "15px", mt: "10px", fontSize: "13px", cursor: "pointer" }}>
                 <p>Login</p>
             </Box>
 
 
-            <Box sx={{ ml: "60px", mt: "13px", cursor: "pointer" }}>
+            <Box sx={{ ml: "60px", mt: "13px", cursor: "pointer", }}  >
                 <Image src="https://www.licious.in/img/rebranding/cart_icon.svg " />
 
-            </Box>
-            <Box sx={{ ml: "13px", mt: "13px", fontSize: "13px" }}>
+            </Box >
+            <Box sx={{ ml: "13px", mt: "13px", fontSize: "13px", cursor: "pointer" }}>
                 <p>Cart</p>
             </Box>
 
