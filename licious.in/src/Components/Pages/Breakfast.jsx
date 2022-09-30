@@ -131,7 +131,7 @@ export default function Breakfast() {
     ];
 
     return (
-        <Box Box bg="#f8f8f8">
+        <Box  bg="#f8f8f8" py='20px'>
 
             <div className="controls">
                 <Button onClick={sliderRef?.slickPrev}>

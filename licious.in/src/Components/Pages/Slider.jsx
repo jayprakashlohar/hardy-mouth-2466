@@ -26,7 +26,7 @@ export default class SimpleSlider extends Component {
        
           </Box>
           <Box>
-          <Image src="https://d2407na1z3fc0t.cloudfront.net/Slider/banner_62e142fbed5a8"/>
+          <Image src="http://www.dealnloot.com/wp-content/uploads/2022/08/licious-feast20.jpg"/>
         
           </Box>
           <Box>
@@ -34,7 +34,7 @@ export default class SimpleSlider extends Component {
        
           </Box>
           <Box>
-          <Image src="https://d2407na1z3fc0t.cloudfront.net/Slider/banner_62e142fbed5a8"/>
+          <Image src="http://www.dealnloot.com/wp-content/uploads/2022/08/licious-feast20.jpg"/>
         
           </Box>
           <Box>
@@ -42,7 +42,7 @@ export default class SimpleSlider extends Component {
          
           </Box>
           <Box>
-          <Image src="https://d2407na1z3fc0t.cloudfront.net/Slider/banner_62e142fbed5a8"/>
+          <Image src="http://www.dealnloot.com/wp-content/uploads/2022/08/licious-feast20.jpg"/>
           </Box>
         </Slider>
         <Box w="full" h="25px">
