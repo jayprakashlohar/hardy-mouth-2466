@@ -130,7 +130,7 @@ export default function Carousel() {
     ];
 
     return (
-        <Box Box bg="#f8f8f8">
+        <Box Box bg="#f8f8f8" py="20px">
 
             <div className="controls">
                 <Button onClick={sliderRef?.slickPrev}>

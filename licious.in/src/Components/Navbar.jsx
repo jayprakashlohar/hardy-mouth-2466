@@ -1,6 +1,7 @@
 import React from "react";
 import { Flex, HStack, Text, Box, Image, Input, Stack, Button, InputRightElement, Icon, InputGroup, color } from "@chakra-ui/react";
 import { SearchIcon } from '@chakra-ui/icons'
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {

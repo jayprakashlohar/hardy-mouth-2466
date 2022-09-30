@@ -10,23 +10,24 @@ import Boneless from './Components/Pages/BonelessCuts';
 import Explore from "./Components/Pages/Explore";
 import Breakfast from "./Components/Pages/Breakfast"
 import Footer from "./Components/Pages/Footer";
-
-
+import Proceed from './Components/Pages/ProceedToPament';
+import PlacementExample from "./Components/Pages/ProceedToCheckout";
 
 function App() {
   return (
     <div className="App">
-
-      <Navbar />
-      <SimpleSlider />
-      <Product />
-      <Best />
-      <Boneless />
-      {/* <Carousel /> */}
-      <Explore />
-      <Breakfast />
-      <Footer />
-      {/* <Login/> */}
+       {/* <Navbar />  */}
+      {/* <SimpleSlider /> */}
+      {/* <Product /> */}
+      {/* <Best /> */}
+      {/* <Boneless />  */}
+       {/* <Carousel /> */}
+       {/* <Explore /> */}
+      {/* <Breakfast />  */}
+       {/* <Login/> */}
+      {/* <Footer /> */}
+      {/* <Proceed/> */}
+       <PlacementExample/>
 
     </div>
   );

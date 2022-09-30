@@ -81,18 +81,18 @@ body {
   width: 45px;
   height: 45px;
   font-size: 20px;
-  padding-left:5px;
+  padding-left: 5px;
   cursor: pointer;
 }
 
-.content{
+.content {
   width: 85%;
   margin: auto;
   /* background: #fff; */
   background-color: #fff;
 }
 
-.controls{ 
+.controls {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -101,27 +101,35 @@ body {
   /* background-color: #f8f8f8; */
 }
 
-.card{
-   padding: 10px;
-   border: 1px solid #dedddd ;
-   border-radius: 5px;
-   
+.card {
+  padding: 10px;
+  border: 1px solid #dedddd;
+  border-radius: 5px;
+
 }
 
+.p {
+  text-align: center;
+  font-size: 15px;
+}
+
+.p span {
+  color: red;
+}
 
 
 .card-header h2 {
   font-weight: 650;
-  
+
 }
 
 .card-header {
   line-height: 40px;
- 
+
 }
 
 .price {
-  color:#D11243;
+  color: #D11243;
   font-weight: 600;
 }
 
@@ -136,10 +144,86 @@ body {
   background-color: #ffe6ea;
   display: flex;
 }
-           
-.click{
+
+.click {
   font-size: 13px;
   margin-left: 200px;
   color: #D11243;
   font-weight: 500;
+}
+
+
+.input:focus {
+  outline: none;
+}
+
+.header {
+  content: '';
+  position: absolute;
+  width: calc(100% - 360px);
+  height: 1px;
+  border-top: 1px solid #eaeaea;
+  right: 100px;
+  top: 22px;
+}
+
+.pp{
+  font-weight: 600;
+  
+}
+
+.hr{
+  width: 75%;
+  margin-left: 230px;
+  margin-bottom: 20px;
+
+}
+
+.hrrr {
+  width: 85%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.p1{
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.p2{
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.p3{
+  text-align: center;
+  font-weight: 600;
+}
+
+.p4 {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.p5 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.pp6 {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.price1 {
+  color: red;
+}
+
+.change {
+  color: red;
+  font-size: 15px;
+  text-decoration: underline;
 }
