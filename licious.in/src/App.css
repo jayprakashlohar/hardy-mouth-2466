@@ -227,3 +227,44 @@ body {
   font-size: 15px;
   text-decoration: underline;
 }
+
+.Cartp{
+   font-size: 14px; 
+   margin-left: 10px; 
+   line-height: 20px;
+   margin-top: 10px;
+}
+
+.Span {
+  margin-left: 70%;
+}
+
+.Span1{
+  margin-left: 58%;
+}
+
+
+.span2 {
+  margin-left: 70%;
+  color: red;
+}
+
+.btn {
+  font-size: 18px;
+ background-color: #D11243 !important;
+  color: #fff;
+  border-radius: 5px;
+  padding: 12px 25px;
+  text-align: center;
+  border: none;
+  font-weight: 600;
+  transition: all 50ms ease-out;
+}
+.proceedBtn {
+  box-shadow: 0 0 15px rgb(0 0 0 / 15%);
+}
+.borderRemove {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+}

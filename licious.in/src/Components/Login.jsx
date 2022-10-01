@@ -34,9 +34,9 @@ const Login = () => {
         
       >
         <DrawerOverlay />
-        <DrawerContent p="10px" backgroundImage="url('https://m.licious.in/image/rebranding/jpg/user-login-new.jpg')" >
+        <DrawerContent  maxW= "420px" p="10px" backgroundImage="url('https://m.licious.in/image/rebranding/jpg/user-login-new.jpg')" >
           <DrawerCloseButton />
-          <Box bg="#fff"  mt="100%" pb="200px" >
+          <Box bg="#fff"  mt="70%" pb="200px" >
           <DrawerHeader >Sign In/ Sign Up</DrawerHeader>
 
           <DrawerBody  >

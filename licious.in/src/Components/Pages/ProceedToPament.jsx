@@ -34,29 +34,9 @@ function Proceed() {
                         Proceed to Payment</Button>
                 </Box>
             </Box>
+            <Box mt="20px" ml="50px">
+                <Image src="progress2.png" />
 
-            <Box w="300px" h="220px" mt="80px" ml="40px" >
-
-                <Heading
-                    fontSize="22px"
-                    fontWeight="500"
-                >
-                    Choose Address <span className="change">Change</span> </Heading>
-                <span>45435</span>
-                <Box mt="20px">
-                    <Heading
-                        fontSize="22px"
-                        fontWeight="500"
-
-                    >Delivery Summery</Heading>
-                    <span>1 items to be delivered in 1 shipment</span>
-                </Box>
-
-                <Heading
-                    fontSize="22px"
-                    mt="20px"
-                    fontWeight="500"
-                >Pament Method</Heading>
             </Box>
         </Box>
     )
