@@ -19,7 +19,6 @@ export default class SimpleSlider extends Component {
     return (
         
       <Box className="bg">
-        {/* <h2> Single Item</h2> */}
         <Slider {...settings}>
           <Box>
             <Image src="https://d2407na1z3fc0t.cloudfront.net/Slider/banner_62e142fbed5a8"/>

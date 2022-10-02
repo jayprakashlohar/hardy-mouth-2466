@@ -1,22 +1,26 @@
-// import React from "react";
-// import { Route,Routes } from "react-router-dom";
-// import Breakfast from "../Pages/Breakfast";
-// import Boneless from "../Pages/BonelessCuts";
-// import Explore from "../Pages/Explore";
-// import Navbar from "../Navbar";
-// import Slider from "react-slick";
-// import Footer from "../Pages/Footer";
-// import Proceed from "../Pages/ProceedToPament";
-// import PlacementExample from "../Pages/ProceedToCheckout";
-// import Login from "../Login";
+import React from "react";
+import { Route,Routes } from "react-router-dom";
+import Home from "../../Pages/Home";
+import Address from "../../Pages/Address";
+import DeliverySummary from "../../Pages/DeliverySummary";
+import Payment from "../../Pages/Payment";
+import Thankyou from "../../Pages/Thankyou";
+import PrivateRoute from "../Private/PrivateRoute";
 
 
-// const AllRoutes = () => {
+const AllRoutes = () => {
 
-//     return (
-//         <>
-//         </>
-//     )
-// }
+    return (
+        <>
+        <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/checkout/order-summary" element={<PrivateRoute><Address /></PrivateRoute>}></Route>
+            <Route path="/checkout/delivery-summary" element={<PrivateRoute><DeliverySummary /></PrivateRoute>}></Route>
+            <Route path="/checkout/payments" element={<PrivateRoute><Payment /></PrivateRoute>}></Route>
+            <Route path="/order-status" element={<PrivateRoute><Thankyou /></PrivateRoute>}></Route>
+        </Routes>
+        </>
+    )
+}
 
-// export default AllRoutes ;
+export default AllRoutes ;

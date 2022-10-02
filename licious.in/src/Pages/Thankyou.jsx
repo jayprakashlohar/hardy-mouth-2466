@@ -1,8 +1,15 @@
 import { Box, Button, Flex, Image } from "@chakra-ui/react"
 import React from "react"
-import BillDetails from "./BillDetails"
+import { useNavigate } from "react-router-dom"
+import BillDetails from "../Components/BillDetails"
 
 const Thankyou = () => {
+    const navigate = useNavigate()
+
+    const goToHome = () => {
+        navigate("/");
+    }
+    
 
     return (
         <Box w="full" bg="#f8f8f8">
@@ -16,7 +23,7 @@ const Thankyou = () => {
                 <Box m="-50px 20px 30px 100px">
                     <BillDetails />
                     <Flex border="1px dashed gray" mt="62px" bg="#ffffff" h="100px" justifyContent="center" alignItems="center">
-                        <Button className="btn" >Shop more</Button>
+                        <Button onClick={goToHome} className="btn" >Shop more</Button>
                     </Flex>
                 </Box>
             </Flex>

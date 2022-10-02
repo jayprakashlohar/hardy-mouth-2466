@@ -1,39 +1,60 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
     DrawerContent,
     DrawerHeader,
     RadioGroup,
     DrawerBody,
-    Radio,
+    Text,
     Button,
     Stack,
     Drawer,
     DrawerOverlay,
     useDisclosure,
     Box,
-    Heading,
+    Image,
 
 
 
 } from "@chakra-ui/react";
 import BillDetails from "./BillDetails";
+import { AppContext } from "./Context/AppContext";
+import { Navigate, useNavigate } from "react-router-dom";
 
 
 
-function PlacementExample() {
-    const { isOpen, onOpen, onClose } = useDisclosure()
+function AfterLoginDrawer({open}) {
+    const {cartItem, isAuth} = useContext(AppContext)
+    const navigate = useNavigate();
+
+
+    console.log('open', open)
+    const { isOpen, onOpen=open, onClose } = useDisclosure()
     const [placement, setPlacement] = React.useState('right')
+
+    const goToAddress = () => {
+        onClose()
+        navigate("/checkout/order-summary");
+
+    }
 
     return (
         <Box >
             <RadioGroup defaultValue={placement} onChange={setPlacement}>
                 <Stack direction='row' mb='4'>
-
                 </Stack>
+
             </RadioGroup>
-            <Button colorScheme='blue' onClick={onOpen}>
-                Open
-            </Button>
+
+           {isAuth && <Box display="flex" colorScheme='teal' onClick={onOpen} cursor="pointer" sx={{ ml: "60px", mt: "10px", cursor: "pointer" }} >
+                <Image w="25px"
+                    src="https://www.licious.in/img/rebranding/cart_icon.svg"
+                    alt="tag"
+                />
+                <p className="cartCount">{cartItem > 0 && cartItem}</p>
+                <Text sx={{ ml: "15px",  fontSize: "13px", cursor: "pointer" }}>Cart</Text>
+            </Box>}
+            
+
             <Drawer placement={placement} onClose={onClose} isOpen={isOpen} >
                 <DrawerOverlay />
                 <DrawerContent maxW="440px" bg="#f8f8f8">
@@ -68,7 +89,7 @@ function PlacementExample() {
                         <Box w="400px" h="50px" mt="100px" display="flex">
                             <Box w="200px" textAlign="center" pt="10px" bg="#fff" fontWeight="600">Total: ₹ 308 </Box>
 
-                            <Button w="200px" h="50px" color="#fff" bg="#D11243">Proceed to checkout</Button>
+                            <Button onClick={goToAddress} w="200px" h="50px" color="#fff" bg="#D11243">Proceed to checkout</Button>
                         </Box>
 
                     </DrawerBody>
@@ -81,4 +102,4 @@ function PlacementExample() {
     )
 }
 
-export default PlacementExample;
+export default AfterLoginDrawer;
