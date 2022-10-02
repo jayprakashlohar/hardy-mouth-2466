@@ -1,8 +1,14 @@
 import React from "react";
 import { Box, Button, Heading, Image } from "@chakra-ui/react"
+import { useNavigate } from "react-router-dom";
+import summery from "./progress2.png"
 
+function DeliverySummary() {
+    const navigate = useNavigate()
 
-function Proceed() {
+    const goToPayment = () => {
+        navigate("/checkout/payments");
+    }
 
     return (
         <Box w="full" h="400px" bg="#f8f8f8" display="flex">
@@ -29,17 +35,17 @@ function Proceed() {
                 </Box>
 
                 <Box mt="50px" ml="20px" color="#fff" >
-                    <Button bg="#D11243">
+                    <Button onClick={goToPayment} bg="#D11243">
 
                         Proceed to Payment</Button>
                 </Box>
             </Box>
             <Box mt="20px" ml="50px">
-                <Image src="progress2.png" />
+                <Image src= {summery} />
 
             </Box>
         </Box>
     )
 }
 
-export default Proceed;
+export default DeliverySummary;

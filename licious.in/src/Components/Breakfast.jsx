@@ -1,16 +1,19 @@
 
 
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Slider from "react-slick";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Button, Box, Heading, Container, Flex, Image } from "@chakra-ui/react";
+import { AppContext } from "./Context/AppContext";
 
 export default function Breakfast() {
     const [sliderRef, setSliderRef] = useState(null);
+    const {setCartItem, isAuth} = useContext(AppContext)
+    
 
     const sliderSettings = {
         arrows: false,
@@ -35,6 +38,7 @@ export default function Breakfast() {
 
     const hotelCards = [
         {
+            id: 1,
             imageSrc:
                 "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_drokbgb2jhb/1/prod_display_image/1634375004.4382--2021-10-1614:33:24--905?format=webp",
             title: "Chicken Curry Cut - Small Pieces",
@@ -43,8 +47,8 @@ export default function Breakfast() {
             ml: "Pieces:1"
 
         },
-
         {
+            id: 2,
             imageSrc:
                 "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_drokbgb2jhb/1/prod_display_image/1634375004.4382--2021-10-1614:33:24--905?format=webp",
             title: "Deluxe Room",
@@ -54,6 +58,7 @@ export default function Breakfast() {
 
         },
         {
+            id: 3,
             imageSrc:
                 "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/0d28ad62-9409-c682-3c22-8e0ebc1697d5/original/Chunky-Continental-Chicken-Spread.jpg?format=webp",
             title: "King Deluxe Room",
@@ -63,6 +68,7 @@ export default function Breakfast() {
 
         },
         {
+            id: 4,
             imageSrc:
                 "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/b7cbafbe-bdf9-39cc-30c0-5a7c432309d8/original/Chunky-Herby-Tomato-Chicken-Spread_(1).jpg?format=webp",
             title: "Royal Suite",
@@ -72,6 +78,7 @@ export default function Breakfast() {
 
         },
         {
+            id: 5,
             imageSrc:
                 "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/b7cbafbe-bdf9-39cc-30c0-5a7c432309d8/original/Chunky-Herby-Tomato-Chicken-Spread_(1).jpg?format=webp",
             title: "Royal Suite",
@@ -82,6 +89,7 @@ export default function Breakfast() {
 
         },
         {
+            id: 6,
             imageSrc:
                 "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/faa6ff18-1108-6acf-4885-aa0fdb5e13ec/original/Chunky-Shawarma-Chicken-Spread_(7).jpg?format=webp",
             title: "Royal Suite",
@@ -92,6 +100,7 @@ export default function Breakfast() {
 
         },
         {
+            id: 7,
             imageSrc:
                 "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/fee95638-21fd-1706-4569-ed42430fd716/original/Sriracha-chicken-spreadsTIle-image.jpg?format=webp",
             title: "Royal Suite",
@@ -102,6 +111,7 @@ export default function Breakfast() {
 
         },
         {
+            id: 8,
             imageSrc:
                 "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/5c6b23b1-9940-30e2-7c3b-fc0d7be529a1/original/cold_cut-06.jpg?format=webp",
             title: "Chicken Curry Cut - Small Pieces (Large Pack)",
@@ -111,6 +121,7 @@ export default function Breakfast() {
 
         },
         {
+            id: 9,
             imageSrc:
                 "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/36c60289-829d-830f-d4c7-c62675adb323/original/Frank---Chorizo-unCooked+new.jpg?format=webp",
             title: "Chicken Breast - Boneless",
@@ -120,6 +131,7 @@ export default function Breakfast() {
 
         },
         {
+            id: 10,
             imageSrc:
                 "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/1ce4618e-f9ac-ad01-3ab2-5f9b26ba6a2b/original/Frank---Classic-UNCooked+tag.jpg?format=webp",
             title: "Royal Suite",
@@ -129,6 +141,15 @@ export default function Breakfast() {
 
         },
     ];
+
+    const handleClick = () => {
+        if (isAuth) {
+            let localCartItem = JSON.parse(localStorage.getItem('cartItem'))
+            localCartItem++;
+            localStorage.setItem('cartItem',JSON.stringify(localCartItem))
+            setCartItem(localCartItem)
+        }
+    }
 
     return (
         <Box  bg="#f8f8f8" py='20px'>
@@ -160,7 +181,7 @@ export default function Breakfast() {
                                 <span className="price">{card.pricingText}</span>
 
                             </div >
-                            <Button float='right' bg='#D11243' color='#fff' >Add to Cart</Button>
+                            <Button float='right' bg='#D11243' color='#fff' onClick={handleClick}>Add to Cart</Button>
                         </div>
                     ))}
                 </Slider>

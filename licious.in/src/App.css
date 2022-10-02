@@ -268,3 +268,22 @@ body {
   border: none;
   border-bottom: 1px solid black;
 }
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.App{
+  padding: 0;
+  margin: 0;
+}
+
+.cartCount{
+  color: #D11243;
+  font-weight: 600;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}

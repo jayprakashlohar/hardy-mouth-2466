@@ -1,10 +1,17 @@
-import React from "react";
-import { Flex, HStack, Text, Box, Image, Input, Stack, Button, InputRightElement, Icon, InputGroup, color } from "@chakra-ui/react";
+import React, { useContext } from "react";
+import { Flex, HStack, Text, Box, Image, Input, Stack, Button, InputRightElement, Icon, InputGroup, color, useConst } from "@chakra-ui/react";
 import { SearchIcon } from '@chakra-ui/icons'
 import { Link } from "react-router-dom";
+import PopHover from "./PopHover";
+import LoginDrawer from "./LoginDrawer";
+import { AppContext } from "./Context/AppContext";
+import AfterLoginDrawer from "./AfterLoginDrawer";
 
 
 const Navbar = () => {
+    const {setIsAuth, cartItem} = useContext(AppContext)
+
+
     return <div>
 
         <Flex sx={{ p: "4px", bg: "#eaeaea", fontSize: "14px", justifyContent: "space-around" }} >
@@ -38,9 +45,7 @@ const Navbar = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-down" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z" />
                 </svg>
-
             </HStack>
-
         </Flex>
 
         <Flex p='20px' bg="#FFFFFF" >
@@ -54,9 +59,7 @@ const Navbar = () => {
             </Box>
             <Box sx={{ ml: "5px", mt: "4px", fontSize: "11px" }}>
                 <p>BENGALUIRU <br />42312 </p>
-
             </Box>
-
 
             <Stack>
                 <InputGroup>
@@ -75,35 +78,17 @@ const Navbar = () => {
                     </InputRightElement>
                 </InputGroup>
             </Stack>
-
-            <Box sx={{ ml: "60px", mt: "10px", cursor: "pointer" }}>
-                <Image src="https://www.licious.in/img/rebranding/category-dropdown-icon.svg" />
-
+            <Box>
+                 <PopHover/>
             </Box>
-            <Box sx={{ ml: "15px", mt: "10px", fontSize: "13px", cursor: "pointer" }}>
-                <p>Categories</p>
+            <Box>
+                <LoginDrawer/>
             </Box>
 
-
-
-            <Box sx={{ ml: "60px", mt: "10px", cursor: "pointer" }}>
-                <Image src="https://www.licious.in/img/rebranding/profile_icon.svg" />
-
-            </Box>
-            <Box sx={{ ml: "15px", mt: "10px", fontSize: "13px", cursor: "pointer" }}>
-                <p>Login</p>
-            </Box>
-
-
-            <Box sx={{ ml: "60px", mt: "13px", cursor: "pointer", }}  >
-                <Image src="https://www.licious.in/img/rebranding/cart_icon.svg " />
-
-            </Box >
-            <Box sx={{ ml: "13px", mt: "13px", fontSize: "13px", cursor: "pointer" }}>
-                <p>Cart</p>
-            </Box>
-
-
+             <Box>
+                <AfterLoginDrawer/>
+             </Box>
+             
         </Flex>
     </div>;
 };

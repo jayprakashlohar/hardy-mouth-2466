@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Button, Box, Heading, Container } from "@chakra-ui/react";
 
-export default function Carousel() {
+export default function BestSeller() {
     const [sliderRef, setSliderRef] = useState(null);
 
     const sliderSettings = {
